@@ -1,0 +1,10 @@
+{
+  "production": {
+    "wellAPI": "28-196-03444",
+    "reportDate": "2024-05",
+    "oilVolume": 2400.64,
+    "gasVolume": 10600.76,
+    "waterVolume": 240.8,
+    "thp": 3400
+  }
+}

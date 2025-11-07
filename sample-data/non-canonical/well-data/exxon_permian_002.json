@@ -1,0 +1,27 @@
+{
+  "well_id": "42-255-98765",
+  "well_name": "PERMIAN STAR #2",
+  "operator": "EXXONMOBIL CORP",
+  "status": "ACTIVE",
+  "location": {
+    "lat": 31.8457,
+    "lng": -102.3676,
+    "coordinate_system": "WGS84"
+  },
+  "dates": {
+    "spud": "2024-02-10T00:00:00Z",
+    "completed": "2024-04-18T00:00:00Z"
+  },
+  "depth_info": {
+    "measured_depth": 18750,
+    "true_vertical_depth": 8900,
+    "depth_unit": "ft"
+  },
+  "target_formation": "Wolfcamp A",
+  "wellbore_profile": "horizontal",
+  "casing": [
+    {"diameter": 20.0, "setting_depth": 1200, "grade": "K55"},
+    {"diameter": 13.375, "setting_depth": 8950, "grade": "L80"},
+    {"diameter": 7.0, "setting_depth": 18750, "grade": "P110"}
+  ]
+}

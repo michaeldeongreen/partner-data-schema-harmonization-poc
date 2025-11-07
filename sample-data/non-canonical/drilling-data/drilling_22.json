@@ -1,0 +1,11 @@
+{
+  "drillingReport": {
+    "wellId": "22-154-02706",
+    "date": "2024-11-23",
+    "currentDepth": 9400,
+    "dailyFootage": 160,
+    "rate_of_penetration": 42.4,
+    "mudWeight": 11.6,
+    "bitType": "TRICONE"
+  }
+}

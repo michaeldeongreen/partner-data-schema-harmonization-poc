@@ -1,0 +1,13 @@
+{
+  "seismicSurvey": {
+    "surveyName": "SEISMIC_PROJECT_4_2024",
+    "client": "CHEVRON
+EXXON
+SHELL",
+    "contractor": "WesternGeco",
+    "surveyType": "3D",
+    "areaSize": 200.4,
+    "grid_spacing": 45,
+    "acquisitionDate": "2024-05-15"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "wellInfo": {
+    "api": "25-175-03075",
+    "wellName": "WELL_25_2025",
+    "operator": "BP
+CONOCOPHILLIPS",
+    "status": "SHUT_IN"
+  },
+  "location": {
+    "lat": 2875.425,
+    "lng": -10125.575,
+    "elev": 1250
+  },
+  "total_md": 12500,
+  "formation": "Eagle Ford
+Bakken
+Permian
+Marcellus"
+}

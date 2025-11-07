@@ -1,0 +1,20 @@
+{
+  "wellInfo": {
+    "api": "20-140-02460",
+    "wellName": "WELL_20_2025",
+    "operator": "SHELL
+BP
+CONOCOPHILLIPS",
+    "status": "PLUGGED"
+  },
+  "location": {
+    "latitude": 2860.340,
+    "longitude": -10100.460,
+    "elevation": 1200
+  },
+  "totalDepth": 12000,
+  "formation": "Eagle Ford
+Bakken
+Permian
+Marcellus"
+}

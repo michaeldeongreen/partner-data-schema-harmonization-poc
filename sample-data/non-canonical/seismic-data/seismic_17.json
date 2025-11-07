@@ -1,0 +1,12 @@
+{
+  "geophysicalData": {
+    "project_name": "SEISMIC_PROJECT_17_2024",
+    "operator": "EXXON
+SHELL",
+    "service_company": "ION",
+    "acquisition_type": "2D",
+    "coverage_sq_km": 525.7,
+    "spatial_sampling": 110,
+    "acquisitionDate": "2024-06-15"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "wellInfo": {
+    "api": "31-217-03813",
+    "wellName": "WELL_31_2025",
+    "operator": "MARATHON",
+    "status": "SHUT_IN"
+  },
+  "location": {
+    "lat": 2893.527,
+    "lng": -10155.713,
+    "elev": 1310
+  },
+  "total_md": 13100,
+  "formation": "Bakken
+Permian
+Marcellus"
+}

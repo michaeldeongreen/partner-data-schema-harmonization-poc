@@ -1,0 +1,18 @@
+{
+  "wellInfo": {
+    "api": "10-070-01230",
+    "wellName": "WELL_10_2025",
+    "operator": "CONOCOPHILLIPS",
+    "status": "SHUT_IN"
+  },
+  "location": {
+    "latitude": 2830.170,
+    "longitude": -10050.230,
+    "elevation": 1100
+  },
+  "totalDepth": 11000,
+  "formation": "Eagle Ford
+Bakken
+Permian
+Marcellus"
+}

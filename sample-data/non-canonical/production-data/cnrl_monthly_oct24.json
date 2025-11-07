@@ -1,0 +1,42 @@
+{
+  "monthly_production": {
+    "header": {
+      "uwi": "101/05-25-040-21W4/00",
+      "operator": "CANADIAN NATURAL RESOURCES",
+      "province": "ALBERTA",
+      "reporting_period": "2024-10",
+      "report_type": "MONTHLY_PRODUCTION"
+    },
+    "volumes": {
+      "crude_oil_m3": 1456.78,
+      "natural_gas_e3m3": 89.456,
+      "condensate_m3": 123.45,
+      "water_m3": 567.89
+    },
+    "rates": {
+      "oil_m3_per_day": 47.0,
+      "gas_e3m3_per_day": 2.89,
+      "water_m3_per_day": 18.3,
+      "gor_m3_per_m3": 61.4
+    },
+    "well_conditions": {
+      "thp_kpa": 16890,
+      "chp_kpa": 21234,
+      "temperature_c": 62,
+      "h2s_ppm": 125,
+      "co2_percent": 3.2
+    },
+    "operating_stats": {
+      "hours_on_production": 720,
+      "total_hours_in_month": 744,
+      "efficiency_percent": 96.8,
+      "downtime_reason": "SCHEDULED_MAINTENANCE"
+    },
+    "economics": {
+      "working_interest": 0.625,
+      "gross_overriding_royalty": 0.05,
+      "crown_royalty_rate": 0.125,
+      "freehold_royalty_rate": 0.1875
+    }
+  }
+}

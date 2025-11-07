@@ -1,0 +1,49 @@
+{
+  "completion_report": {
+    "well_header": {
+      "api": "03-027-11223",
+      "name": "BAKKEN HORIZON 3-14H",
+      "operator": "CONTINENTAL RESOURCES",
+      "service_company": "HALLIBURTON"
+    },
+    "completion_date": "2024-03-20",
+    "frac_design": {
+      "stages_total": 45,
+      "stage_length": 220,
+      "perforation_clusters": 6,
+      "shots_per_cluster": 12,
+      "proppant_type": "100 MESH SAND",
+      "fluid_system": "SLICKWATER"
+    },
+    "stage_data": [
+      {
+        "stage_number": 1,
+        "measured_depth": 19850,
+        "true_vertical_depth": 10890,
+        "treatment_pressure": 8950,
+        "proppant_pumped": 285000,
+        "fluid_pumped": 125000,
+        "avg_rate": 75,
+        "max_pressure": 9250,
+        "isip": 7890
+      },
+      {
+        "stage_number": 2,
+        "measured_depth": 19630,
+        "true_vertical_depth": 10885,
+        "treatment_pressure": 9120,
+        "proppant_pumped": 290000,
+        "fluid_pumped": 128000,
+        "avg_rate": 78,
+        "max_pressure": 9450,
+        "isip": 8120
+      }
+    ],
+    "totals": {
+      "total_proppant": 12750000,
+      "total_fluid": 5625000,
+      "completion_days": 18,
+      "perforation_count": 3240
+    }
+  }
+}

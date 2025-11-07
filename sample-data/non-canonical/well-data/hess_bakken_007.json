@@ -1,0 +1,44 @@
+{
+  "id": "BAKKEN_007_2024",
+  "wellIdentifier": {
+    "apiWellNumber": "33-053-05678",
+    "wellNameOfficial": "WILLISTON FEDERAL 7-18H",
+    "operatingCompany": "HESS CORPORATION",
+    "wellStatusCurrent": "PRODUCING"
+  },
+  "locationData": {
+    "surfaceCoordinates": [47.2561, -103.7892],
+    "bhCoordinates": [47.2489, -103.7654],
+    "elevationKB": 2089,
+    "coordinateReferenceSystem": "NAD27"
+  },
+  "drillingOperations": {
+    "datesImportant": {
+      "permitIssued": "2024-01-05",
+      "drillingCommenced": "2024-02-12",
+      "drillingCompleted": "2024-03-25",
+      "wellCompleted": "2024-04-08"
+    },
+    "depthMeasurements": {
+      "finalMD": 21567,
+      "finalTVD": 10234,
+      "horizontalDisplacement": 18945
+    }
+  },
+  "geology": {
+    "targetFormations": ["Middle Bakken", "Three Forks"],
+    "formationTops": {
+      "Bakken_Top": {"depth": 10156, "elevation": -8067},
+      "Three_Forks": {"depth": 10298, "elevation": -8209}
+    }
+  },
+  "wellConstruction": {
+    "wellboreType": "DEVIATED_HORIZONTAL",
+    "casingDesign": [
+      {"stringName": "Conductor", "outerDiameter": 20.0, "settingDepth": 175},
+      {"stringName": "Surface", "outerDiameter": 13.375, "settingDepth": 2850},
+      {"stringName": "Intermediate", "outerDiameter": 9.625, "settingDepth": 10280},
+      {"stringName": "Production", "outerDiameter": 5.5, "settingDepth": 21567}
+    ]
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "drillingReport": {
+    "wellId": "08-056-00984",
+    "date": "2024-09-09",
+    "currentDepth": 6600,
+    "dailyFootage": 90,
+    "drilling_rate": 28.6,
+    "mudWeight": 12.4,
+    "bitType": "IMPREGNATED"
+  }
+}

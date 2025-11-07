@@ -1,0 +1,40 @@
+{
+  "seismic_survey_metadata": {
+    "survey_info": {
+      "survey_name": "EAGLE_FORD_3D_2024",
+      "client": "CHEVRON USA INC",
+      "contractor": "CGG SERVICES",
+      "survey_type": "3D_LAND",
+      "acquisition_date": "2024-01-15"
+    },
+    "geometry": {
+      "area_coverage": 145.6,
+      "area_unit": "square_miles",
+      "coordinates": {
+        "southwest": {"lat": 28.5234, "lon": -97.9876},
+        "northeast": {"lat": 28.7891, "lon": -97.6543}
+      },
+      "crs": "NAD83_UTM_14N",
+      "bin_size": {"inline": 82.5, "crossline": 82.5}
+    },
+    "acquisition_parameters": {
+      "source_type": "VIBROSEIS",
+      "source_array": "4_VIBES_LINEAR",
+      "receiver_type": "GEOPHONE_10HZ",
+      "receiver_array": "48_CHANNEL",
+      "record_length": 6000,
+      "sample_rate": 2,
+      "fold_coverage": 120,
+      "source_interval": 165,
+      "receiver_interval": 220
+    },
+    "processing_info": {
+      "processor": "CGG SERVICES",
+      "processing_date": "2024-05-20",
+      "processing_version": "GEOVATION_2024.1",
+      "migration_type": "PSTM",
+      "datum": 1500,
+      "velocity_model": "ANISOTROPIC_VTI"
+    }
+  }
+}

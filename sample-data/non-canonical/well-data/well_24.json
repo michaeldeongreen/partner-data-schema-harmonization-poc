@@ -1,0 +1,18 @@
+{
+  "wellInfo": {
+    "api": "24-168-02952",
+    "wellName": "WELL_24_2025",
+    "operator": "SHELL
+BP
+CONOCOPHILLIPS",
+    "status": "ACTIVE
+SHUT_IN"
+  },
+  "location": {
+    "latitude": 2872.408,
+    "longitude": -10120.552,
+    "elevation": 1240
+  },
+  "totalDepth": 12400,
+  "formation": "Niobrara"
+}

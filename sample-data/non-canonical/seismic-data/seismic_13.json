@@ -1,0 +1,12 @@
+{
+  "geophysicalData": {
+    "project_name": "SEISMIC_PROJECT_13_2024",
+    "operator": "EXXON
+SHELL",
+    "service_company": "WesternGeco",
+    "acquisition_type": "2D",
+    "coverage_sq_km": 425.3,
+    "grid_spacing": 90,
+    "acquisitionDate": "2024-02-15"
+  }
+}

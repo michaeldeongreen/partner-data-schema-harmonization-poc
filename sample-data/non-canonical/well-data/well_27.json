@@ -1,0 +1,17 @@
+{
+  "wellInfo": {
+    "api": "27-189-03321",
+    "wellName": "WELL_27_2025",
+    "operator": "MARATHON",
+    "status": "ACTIVE
+SHUT_IN"
+  },
+  "location": {
+    "lat": 2881.459,
+    "lng": -10135.621,
+    "elev": 1270
+  },
+  "total_md": 12700,
+  "formation": "Permian
+Marcellus"
+}

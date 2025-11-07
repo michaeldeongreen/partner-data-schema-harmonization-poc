@@ -1,0 +1,18 @@
+{
+  "wellInfo": {
+    "api": "35-245-04305",
+    "wellName": "WELL_35_2025",
+    "operator": "MARATHON",
+    "status": "PLUGGED"
+  },
+  "location": {
+    "lat": 2905.595,
+    "lng": -10175.805,
+    "elev": 1350
+  },
+  "total_md": 13500,
+  "formation": "Eagle Ford
+Bakken
+Permian
+Marcellus"
+}

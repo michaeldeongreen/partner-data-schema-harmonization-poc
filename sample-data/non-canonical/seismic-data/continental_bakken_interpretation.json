@@ -1,0 +1,42 @@
+{
+  "geological_interpretation": {
+    "project": "BAKKEN_STRUCTURAL_STUDY_2024",
+    "interpreter": "CONTINENTAL_GEOSCIENCE_TEAM",
+    "software": "PETREL_2024",
+    "interpretation_date": "2024-06-15",
+    "area_of_interest": {
+      "field_name": "WILLISTON_NORTH",
+      "state": "NORTH_DAKOTA",
+      "counties": ["MCKENZIE", "DUNN", "MOUNTRAIL"],
+      "aoi_polygon": [
+        [47.8234, -103.9876],
+        [47.8234, -103.5432],
+        [47.5678, -103.5432],
+        [47.5678, -103.9876]
+      ]
+    },
+    "horizons": [
+      {
+        "name": "TOP_BAKKEN",
+        "formation": "Bakken Formation",
+        "confidence": "HIGH",
+        "avg_depth_ss": -8950,
+        "structure_type": "ANTICLINE",
+        "fault_density": "LOW"
+      },
+      {
+        "name": "TOP_THREE_FORKS",
+        "formation": "Three Forks Formation", 
+        "confidence": "MEDIUM",
+        "avg_depth_ss": -9150,
+        "structure_type": "MONOCLINE",
+        "fault_density": "MODERATE"
+      }
+    ],
+    "faults": [
+      {"name": "FAULT_A", "type": "NORMAL", "throw": 45, "confidence": 0.85},
+      {"name": "FAULT_B", "type": "REVERSE", "throw": 23, "confidence": 0.72}
+    ],
+    "well_ties": ["API_33-053-05678", "API_33-053-06789", "API_33-053-07890"]
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "SeismicData": {
+    "ProjectHeader": {
+      "ProjectName": "PERMIAN_STACK_SURVEY_2024",
+      "Client": "EXXONMOBIL CORP",
+      "Contractor": "WesternGeco",
+      "SurveyType": "3D_MultiClient",
+      "AcquisitionYear": 2024
+    },
+    "SurveyGeometry": {
+      "TotalArea_sqkm": 875.3,
+      "BoundingBox": {
+        "MinX": 745628.5,
+        "MaxX": 782456.9,
+        "MinY": 3521478.2,
+        "MaxY": 3545789.6,
+        "Projection": "UTM_Zone13N_NAD83"
+      },
+      "BinDimensions": {
+        "InlineSpacing_m": 25.0,
+        "CrosslineSpacing_m": 25.0,
+        "TotalBins": 1402567
+      }
+    },
+    "AcquisitionSpecs": {
+      "SourceConfiguration": {
+        "Type": "DYNAMITE",
+        "ChargeSize_lbs": 10.0,
+        "HoleDepth_ft": 125,
+        "PatternType": "SINGLE_SHOT",
+        "Interval_m": 50.0
+      },
+      "ReceiverConfiguration": {
+        "Type": "SINGLE_GEOPHONE_40HZ",
+        "GroupInterval_m": 25.0,
+        "ArrayLength_m": 200.0,
+        "Channels": 960
+      },
+      "RecordingParams": {
+        "SampleInterval_ms": 1.0,
+        "RecordLength_s": 8.0,
+        "NominalFold": 96,
+        "MaxOffset_m": 6000
+      }
+    },
+    "DataProcessing": {
+      "Contractor": "WesternGeco",
+      "ProcessingCenter": "HOUSTON_TX",
+      "CompletionDate": "2024-08-15",
+      "FlowSequence": [
+        "GEOMETRY_QC",
+        "AMPLITUDE_RECOVERY",
+        "SURFACE_CONSISTENT_DECON",
+        "VELOCITY_ANALYSIS",
+        "DMO_STACK",
+        "POST_STACK_TIME_MIGRATION"
+      ],
+      "FinalDatum_ft": 5000,
+      "VelocityModel": "LAYERED_VTI_ANISOTROPY"
+    }
+  }
+}

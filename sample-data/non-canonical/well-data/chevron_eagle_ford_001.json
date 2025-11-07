@@ -1,0 +1,34 @@
+{
+  "wellHeader": {
+    "apiNumber": "05-025-12345",
+    "wellName": "EAGLE FORD 1H",
+    "operatorName": "CHEVRON USA INC",
+    "wellStatus": "PRODUCING",
+    "coordinates": {
+      "latitude": 28.7041,
+      "longitude": -97.2467,
+      "datum": "NAD83"
+    },
+    "spudDate": "2024-01-15",
+    "completionDate": "2024-03-22",
+    "totalDepth": 15420,
+    "units": {
+      "depth": "feet",
+      "coordinates": "decimal_degrees"
+    }
+  },
+  "formation": {
+    "primaryTarget": "Eagle Ford",
+    "secondaryTarget": "Austin Chalk",
+    "topDepth": 12800,
+    "bottomDepth": 15420
+  },
+  "wellbore": {
+    "type": "HORIZONTAL",
+    "casingProgram": [
+      {"size": 13.375, "depth": 2500, "weight": 68.0},
+      {"size": 9.625, "depth": 12950, "weight": 53.5},
+      {"size": 5.5, "depth": 15420, "weight": 23.0}
+    ]
+  }
+}

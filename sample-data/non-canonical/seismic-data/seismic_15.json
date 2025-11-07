@@ -1,0 +1,13 @@
+{
+  "geophysicalData": {
+    "project_name": "SEISMIC_PROJECT_15_2024",
+    "operator": "BP",
+    "service_company": "CGG
+WesternGeco",
+    "acquisition_type": "2D",
+    "coverage_sq_km": 475.5,
+    "binSize
+grid_spacing": 100,
+    "acquisitionDate": "2024-04-15"
+  }
+}

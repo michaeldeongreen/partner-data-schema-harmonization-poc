@@ -1,0 +1,31 @@
+{
+  "WellData": {
+    "API_NO": "03-027-11223",
+    "WellName": "BAKKEN HORIZON 3-14H",
+    "Company": "CONTINENTAL RESOURCES",
+    "CurrentStatus": "PROD",
+    "Geography": {
+      "SurfaceLatitude": 47.9129,
+      "SurfaceLongitude": -103.2310,
+      "ProjectionSystem": "UTM_Zone_13N"
+    },
+    "DrillingInfo": {
+      "SpudDate": "2024-01-08",
+      "RigReleaseDate": "2024-03-15",
+      "MeasuredDepth_ft": 20145,
+      "TrueVerticalDepth_ft": 10890
+    },
+    "GeologyData": {
+      "PrimaryObjective": "Bakken Formation",
+      "SecondaryObjective": "Three Forks",
+      "TopPerfDepth": 19850,
+      "BottomPerfDepth": 20100
+    },
+    "CasingString": [
+      {"OD_in": 18.625, "DepthSet_ft": 850, "Material": "J55"},
+      {"OD_in": 13.375, "DepthSet_ft": 10920, "Material": "N80"},
+      {"OD_in": 5.0, "DepthSet_ft": 20145, "Material": "P110"}
+    ],
+    "WellType": "HORIZONTAL_MULTI_STAGE_FRAC"
+  }
+}

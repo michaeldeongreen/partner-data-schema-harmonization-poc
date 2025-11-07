@@ -1,0 +1,37 @@
+{
+  "prod_data": {
+    "well_id": "03-027-11223",
+    "company": "CONTINENTAL RESOURCES",
+    "period": "10-2024",
+    "status": "ACTIVE",
+    "fluids": {
+      "oil_bbl": 15678.45,
+      "gas_mcf": 234567.89,
+      "water_bbl": 3456.78,
+      "condensate_bbl": 890.12
+    },
+    "rates": {
+      "oil_bopd": 505.8,
+      "gas_mcfd": 7566.7,
+      "water_bwpd": 111.5,
+      "gor": 1496
+    },
+    "pressures": {
+      "thp": 2890,
+      "chp": 3456,
+      "bhp": 4567,
+      "temp": 156
+    },
+    "runtime": {
+      "total_hours": 744,
+      "producing_hours": 720,
+      "uptime_percent": 96.8
+    },
+    "ownership": {
+      "wi": 62.5,
+      "ri": 18.75,
+      "nri": 43.75
+    },
+    "allocation_factor": 0.8765
+  }
+}

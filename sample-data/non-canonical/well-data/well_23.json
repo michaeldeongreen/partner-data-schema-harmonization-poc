@@ -1,0 +1,15 @@
+{
+  "wellInfo": {
+    "api": "23-161-02829",
+    "wellName": "WELL_23_2025",
+    "operator": "MARATHON",
+    "status": "PLUGGED"
+  },
+  "location": {
+    "lat": 2869.391,
+    "lng": -10115.529,
+    "elev": 1230
+  },
+  "total_md": 12300,
+  "formation": "Marcellus"
+}

@@ -1,0 +1,19 @@
+{
+  "wellInfo": {
+    "api": "21-147-02583",
+    "wellName": "WELL_21_2025",
+    "operator": "BP
+CONOCOPHILLIPS",
+    "status": "ACTIVE
+SHUT_IN"
+  },
+  "location": {
+    "lat": 2863.357,
+    "lng": -10105.483,
+    "elev": 1210
+  },
+  "total_md": 12100,
+  "formation": "Bakken
+Permian
+Marcellus"
+}

@@ -1,0 +1,237 @@
+@using SchemaHarmonizer.Services
+@inject IFileService FileService
+
+<div class="modal fade @modalClass" id="fileBrowserModal" tabindex="-1" style="display: @modalDisplay">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Select @Title</h5>
+                <button type="button" class="btn-close" @onclick="CloseModal"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <h6>Sample Data Files</h6>
+                            @if (!string.IsNullOrEmpty(currentPath) && currentPath != categoryBasePath)
+                            {
+                                <button type="button" class="btn btn-sm btn-outline-secondary" @onclick="NavigateUp">
+                                    <i class="fas fa-arrow-up"></i> Back
+                                </button>
+                            }
+                        </div>
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                @if (!string.IsNullOrEmpty(currentPath))
+                                {
+                                    @foreach (var part in GetBreadcrumbParts())
+                                    {
+                                        <li class="breadcrumb-item">@part</li>
+                                    }
+                                }
+                            </ol>
+                        </nav>
+                        <div class="list-group" style="max-height: 300px; overflow-y: auto;">
+                            @foreach (var folder in currentFolders)
+                            {
+                                <button type="button"
+                                    class="list-group-item list-group-item-action d-flex align-items-center"
+                                    @onclick="() => NavigateToFolder(folder)">
+                                    <i class="fas fa-folder me-2"></i>
+                                    @Path.GetFileName(folder)
+                                </button>
+                            }
+                            @foreach (var file in currentFiles)
+                            {
+                                <button type="button"
+                                    class="list-group-item list-group-item-action d-flex align-items-center @(selectedFile == file ? "active" : "")"
+                                    @onclick="() => SelectFile(file)">
+                                    <i class="fas fa-file me-2"></i>
+                                    @Path.GetFileName(file)
+                                </button>
+                            }
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <h6>Or Enter Custom Path</h6>
+                        <input type="text" class="form-control" @bind="customPath" placeholder="Enter file path..." />
+                        <small class="text-muted">Enter the full path to your JSON file</small>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" @onclick="CloseModal">Cancel</button>
+                <button type="button" class="btn btn-primary" @onclick="SelectCurrentFile"
+                    disabled="@(string.IsNullOrEmpty(selectedFile) && string.IsNullOrEmpty(customPath))">
+                    Select File
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@if (showModal)
+{
+    <div class="modal-backdrop fade show"></div>
+}
+
+@code {
+    [Parameter] public string Title { get; set; } = "File";
+    [Parameter] public EventCallback<string> OnFileSelected { get; set; }
+    [Parameter] public string FileType { get; set; } = "all"; // "drilling", "production", "seismic", "well", "all"
+    [Parameter] public bool IsStandard { get; set; } = false; // true for canonical files, false for non-canonical
+
+    private bool showModal = false;
+    private string modalClass = "";
+    private string modalDisplay = "none";
+    private string selectedFile = "";
+    private string customPath = "";
+    private List<string> sampleFiles = new();
+
+    private string currentPath = "";
+    private string categoryBasePath = "";
+    private List<string> currentFolders = new();
+    private List<string> currentFiles = new();
+
+    private readonly string basePath = "/home/mickgreen58/git/partner-data-schema-harmonization-poc/sample-data";
+
+    protected override void OnInitialized()
+    {
+        InitializePaths();
+        LoadCurrentDirectory();
+    }
+
+    public void ShowModal()
+    {
+        selectedFile = "";
+        customPath = "";
+        InitializePaths();
+        LoadCurrentDirectory();
+        showModal = true;
+        modalClass = "show";
+        modalDisplay = "block";
+        StateHasChanged();
+    }
+
+    private void CloseModal()
+    {
+        showModal = false;
+        modalClass = "";
+        modalDisplay = "none";
+        StateHasChanged();
+    }
+
+    private void SelectFile(string file)
+    {
+        selectedFile = file;
+        customPath = "";
+        StateHasChanged();
+    }
+
+    private async Task SelectCurrentFile()
+    {
+        string? fileToSelect = null;
+
+        if (!string.IsNullOrEmpty(customPath))
+        {
+            fileToSelect = customPath;
+        }
+        else if (!string.IsNullOrEmpty(selectedFile))
+        {
+            fileToSelect = selectedFile;
+        }
+
+        if (!string.IsNullOrEmpty(fileToSelect))
+        {
+            await OnFileSelected.InvokeAsync(fileToSelect);
+            CloseModal();
+        }
+    }
+
+    private void InitializePaths()
+    {
+        categoryBasePath = IsStandard ? Path.Combine(basePath, "canonical") : Path.Combine(basePath, "non-canonical");
+        currentPath = categoryBasePath;
+    }
+
+    private void LoadCurrentDirectory()
+    {
+        currentFolders.Clear();
+        currentFiles.Clear();
+
+        try
+        {
+            if (Directory.Exists(currentPath))
+            {
+                // Load subdirectories
+                var directories = Directory.GetDirectories(currentPath)
+                .Where(d => ShouldShowDirectory(d))
+                .OrderBy(d => Path.GetFileName(d))
+                .ToList();
+                currentFolders.AddRange(directories);
+
+                // Load JSON files
+                var files = Directory.GetFiles(currentPath, "*.json")
+                .OrderBy(f => Path.GetFileName(f))
+                .ToList();
+                currentFiles.AddRange(files);
+            }
+        }
+        catch
+        {
+            // Handle directory access issues gracefully
+        }
+    }
+
+    private bool ShouldShowDirectory(string directory)
+    {
+        var dirName = Path.GetFileName(directory);
+
+        if (FileType == "all")
+            return true;
+
+        return dirName switch
+        {
+            "drilling-data" => FileType == "drilling",
+            "production-data" => FileType == "production",
+            "seismic-data" => FileType == "seismic",
+            "well-data" => FileType == "well",
+            _ => false
+        };
+    }
+
+    private void NavigateToFolder(string folderPath)
+    {
+        currentPath = folderPath;
+        LoadCurrentDirectory();
+        selectedFile = "";
+        StateHasChanged();
+    }
+
+    private void NavigateUp()
+    {
+        var parentPath = Path.GetDirectoryName(currentPath);
+        if (!string.IsNullOrEmpty(parentPath) && parentPath.Length >= categoryBasePath.Length)
+        {
+            currentPath = parentPath;
+            LoadCurrentDirectory();
+            selectedFile = "";
+            StateHasChanged();
+        }
+    }
+
+    private List<string> GetBreadcrumbParts()
+    {
+        var parts = new List<string>();
+        var relativePath = Path.GetRelativePath(categoryBasePath, currentPath);
+
+        parts.Add(IsStandard ? "Canonical" : "Non-Canonical");
+
+        if (relativePath != "." && !string.IsNullOrEmpty(relativePath))
+        {
+            parts.AddRange(relativePath.Split(Path.DirectorySeparatorChar));
+        }
+
+        return parts;
+    }
+}

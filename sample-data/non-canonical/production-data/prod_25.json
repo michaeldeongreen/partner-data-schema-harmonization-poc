@@ -1,0 +1,10 @@
+{
+  "production": {
+    "api_number": "25-175-03075",
+    "period": "2024-02",
+    "oil_bbl": 2250.25,
+    "gas_mcf": 10000.25,
+    "water_bbl": 225.75,
+    "thp": 3250
+  }
+}

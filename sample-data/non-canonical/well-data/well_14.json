@@ -1,0 +1,15 @@
+{
+  "wellInfo": {
+    "api": "14-098-01722",
+    "wellName": "WELL_14_2025",
+    "operator": "CONOCOPHILLIPS",
+    "status": "PLUGGED"
+  },
+  "location": {
+    "latitude": 2842.238,
+    "longitude": -10070.322,
+    "elevation": 1140
+  },
+  "totalDepth": 11400,
+  "formation": "Niobrara"
+}

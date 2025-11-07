@@ -1,0 +1,11 @@
+{
+  "seismicSurvey": {
+    "surveyName": "SEISMIC_PROJECT_14_2024",
+    "client": "SHELL",
+    "contractor": "ION",
+    "surveyType": "3D",
+    "areaSize": 450.4,
+    "spatial_sampling": 95,
+    "acquisitionDate": "2024-03-15"
+  }
+}

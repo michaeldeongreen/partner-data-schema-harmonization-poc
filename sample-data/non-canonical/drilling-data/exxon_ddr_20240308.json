@@ -1,0 +1,48 @@
+{
+  "DDR": {
+    "WellID": "42-255-98765",
+    "Operator": "EXXONMOBIL CORP",
+    "Contractor": "NABORS DRILLING",
+    "RigID": "NBR-845",
+    "ReportDate": "2024-03-08T06:00:00Z",
+    "ReportNo": 45,
+    "Location": {
+      "Field": "PERMIAN WEST",
+      "Lease": "FEDERAL 2024-A",
+      "County": "REAGAN",
+      "State": "TX"
+    },
+    "Depths": {
+      "PreviousMD": 17456,
+      "CurrentMD": 17789,
+      "FootageDrilled": 333,
+      "BitFootage": 2156,
+      "PlannedTD": 18750
+    },
+    "DrillingData": {
+      "WOB_lbs": 42000,
+      "RPM": 135,
+      "Torque_ftlbs": 22500,
+      "SPP_psi": 3890,
+      "FlowRate_gpm": 950,
+      "ROP_fph": 67.2,
+      "BitType": "PDC 8.75in"
+    },
+    "MudData": {
+      "MudWeight_ppg": 12.8,
+      "Viscosity_cp": 48,
+      "YieldPoint": 18,
+      "GelStrength": "12/22",
+      "pH": 10.2,
+      "Chlorides_ppm": 22000,
+      "TempIn_F": 156,
+      "TempOut_F": 168
+    },
+    "TimeBreakdown": [
+      {"Period": "06:00-12:00", "Hours": 6.0, "Operation": "DRILLING_AHEAD", "Code": "DA"},
+      {"Period": "12:00-14:30", "Hours": 2.5, "Operation": "CIRCULATE_CONDITION", "Code": "CC"},
+      {"Period": "14:30-18:00", "Hours": 3.5, "Operation": "DRILLING_AHEAD", "Code": "DA"},
+      {"Period": "18:00-06:00", "Hours": 12.0, "Operation": "TRIP_OUT_BIT", "Code": "TOB"}
+    ]
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "wellInfo": {
+    "api": "29-203-03567",
+    "wellName": "WELL_29_2025",
+    "operator": "BP
+CONOCOPHILLIPS",
+    "status": "PLUGGED"
+  },
+  "location": {
+    "lat": 2887.493,
+    "lng": -10145.667,
+    "elev": 1290
+  },
+  "total_md": 12900,
+  "formation": "Niobrara"
+}

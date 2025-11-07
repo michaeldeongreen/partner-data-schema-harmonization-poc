@@ -1,0 +1,17 @@
+{
+  "wellInfo": {
+    "api": "26-182-03198",
+    "wellName": "WELL_26_2025",
+    "operator": "CONOCOPHILLIPS",
+    "status": "PLUGGED"
+  },
+  "location": {
+    "latitude": 2878.442,
+    "longitude": -10130.598,
+    "elevation": 1260
+  },
+  "totalDepth": 12600,
+  "formation": "Bakken
+Permian
+Marcellus"
+}

@@ -1,0 +1,12 @@
+{
+  "prodData
+production": {
+    "wellAPI": "24-168-02952",
+    "reportDate": "2024-01",
+    "oilVolume": 2200.12,
+    "gasVolume": 9800.8,
+    "waterVolume": 220.64,
+    "tubingPressure
+thp": 3200
+  }
+}

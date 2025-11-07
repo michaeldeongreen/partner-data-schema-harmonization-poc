@@ -1,0 +1,10 @@
+{
+  "monthlyReport": {
+    "api_number": "17-119-02091",
+    "period": "2024-06",
+    "oil_bbl": 1850.21,
+    "gas_mcf": 8400.89,
+    "water_bbl": 185.87,
+    "tubing_pressure_psi": 2850
+  }
+}

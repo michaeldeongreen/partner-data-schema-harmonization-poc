@@ -1,0 +1,12 @@
+{
+  "prodData
+production": {
+    "api_number": "15-105-01845",
+    "period": "2024-04",
+    "oil_bbl": 1750.95,
+    "gas_mcf": 8000.55,
+    "water_bbl": 175.65,
+    "tubingPressure
+thp": 2750
+  }
+}

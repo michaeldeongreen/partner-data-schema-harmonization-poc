@@ -1,0 +1,32 @@
+{
+  "header": {
+    "uwi": "101/05-25-040-21W4/00",
+    "licensee": "CANADIAN NATURAL RESOURCES",
+    "wellName": "MONTNEY MULTI 05-25-040-21W4",
+    "wellStatus": "ON PRODUCTION",
+    "field": "SEPTIMUS"
+  },
+  "surface_location": {
+    "latitude_dd": 56.2847,
+    "longitude_dd": -120.8963,
+    "legal_subdivision": "05-25-040-21W4",
+    "utm_zone": "11"
+  },
+  "drilling_summary": {
+    "license_date": "2024-01-20",
+    "spud_date": "2024-02-05",
+    "final_drill_date": "2024-03-28",
+    "total_measured_depth_m": 5890,
+    "total_vertical_depth_m": 2710
+  },
+  "formation_tops": [
+    {"name": "Montney", "depth_m": 2650, "marker_type": "primary"},
+    {"name": "Doig", "depth_m": 2890, "marker_type": "secondary"}
+  ],
+  "completion_type": "multi_stage_horizontal",
+  "tubulars": [
+    {"size_mm": 508, "depth_m": 640, "steel_grade": "J55"},
+    {"size_mm": 339.7, "depth_m": 2720, "steel_grade": "N80"},
+    {"size_mm": 177.8, "depth_m": 5890, "steel_grade": "P110"}
+  ]
+}

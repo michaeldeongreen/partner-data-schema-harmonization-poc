@@ -1,0 +1,35 @@
+{
+  "production_report": {
+    "well_api": "05-025-12345",
+    "operator": "CHEVRON USA INC",
+    "report_date": "2024-10-31",
+    "report_type": "monthly",
+    "production_data": {
+      "oil": {
+        "volume": 8945.67,
+        "unit": "barrels",
+        "days_on": 31,
+        "rate_avg": 288.6
+      },
+      "gas": {
+        "volume": 125678.90,
+        "unit": "mcf",
+        "rate_avg": 4054.5
+      },
+      "water": {
+        "volume": 1234.56,
+        "unit": "barrels",
+        "rate_avg": 39.8
+      }
+    },
+    "pressure_data": {
+      "tubing_pressure": 2456,
+      "casing_pressure": 3201,
+      "unit": "psi"
+    },
+    "allocation": {
+      "working_interest": 75.5,
+      "net_revenue_interest": 68.2
+    }
+  }
+}

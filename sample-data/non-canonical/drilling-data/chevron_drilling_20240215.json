@@ -1,0 +1,46 @@
+{
+  "drilling_daily_report": {
+    "well_info": {
+      "api_number": "05-025-12345",
+      "well_name": "EAGLE FORD 1H",
+      "operator": "CHEVRON USA INC",
+      "contractor": "PATTERSON-UTI",
+      "rig_number": "PU-756"
+    },
+    "report_details": {
+      "date": "2024-02-15",
+      "report_number": 23,
+      "reporting_time": "06:00",
+      "weather": "Clear, 45°F"
+    },
+    "depth_progress": {
+      "previous_depth": 14850,
+      "current_depth": 15125,
+      "depth_drilled": 275,
+      "bit_footage": 1890,
+      "depth_unit": "feet"
+    },
+    "drilling_parameters": {
+      "weight_on_bit": 35000,
+      "rotary_speed": 120,
+      "pump_pressure": 3450,
+      "flow_rate": 850,
+      "torque": 18500,
+      "rop_avg": 45.8
+    },
+    "mud_properties": {
+      "mud_weight": 11.2,
+      "viscosity": 42,
+      "gel_strength": "8/15",
+      "ph": 9.5,
+      "chlorides": 18500,
+      "temperature": 145
+    },
+    "operations": [
+      {"time": "06:00-08:30", "activity": "Drilling ahead 8.5in hole"},
+      {"time": "08:30-10:15", "activity": "Connection and survey"},
+      {"time": "10:15-18:00", "activity": "Drilling ahead"},
+      {"time": "18:00-06:00", "activity": "Trip out for bit change"}
+    ]
+  }
+}

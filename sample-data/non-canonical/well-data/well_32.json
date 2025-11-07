@@ -1,0 +1,18 @@
+{
+  "wellInfo": {
+    "api": "32-224-03936",
+    "wellName": "WELL_32_2025",
+    "operator": "SHELL
+BP
+CONOCOPHILLIPS",
+    "status": "PLUGGED"
+  },
+  "location": {
+    "latitude": 2896.544,
+    "longitude": -10160.736,
+    "elevation": 1320
+  },
+  "totalDepth": 13200,
+  "formation": "Permian
+Marcellus"
+}

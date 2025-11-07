@@ -1,0 +1,42 @@
+{
+  "wellInfo": {
+    "api": "05-025-67890",
+    "name": "EAGLE FORD UNIT 2H",
+    "operator": "PIONEER NATURAL RESOURCES",
+    "state": "TEXAS",
+    "county": "KARNES",
+    "status": "ACTIVE_PRODUCER"
+  },
+  "coords": {
+    "surface": {
+      "lat": 28.6234,
+      "lon": -97.8901,
+      "elev": 285
+    },
+    "bottomhole": {
+      "lat": 28.6189,
+      "lon": -97.8745,
+      "tvd": 8950
+    }
+  },
+  "timeline": {
+    "permitted": "2023-12-15",
+    "spudded": "2024-01-28",
+    "td_reached": "2024-03-10",
+    "completed": "2024-04-02",
+    "first_prod": "2024-04-15"
+  },
+  "well_design": {
+    "profile": "horizontal",
+    "md_total": 16890,
+    "tvd_total": 8950,
+    "lateral_length": 7840,
+    "target": "Eagle Ford Shale",
+    "casing_program": {
+      "conductor": {"size": 30, "depth": 120},
+      "surface": {"size": 13.375, "depth": 2890, "wt": 68},
+      "intermediate": {"size": 9.625, "depth": 9100, "wt": 47},
+      "production": {"size": 5.5, "depth": 16890, "wt": 23}
+    }
+  }
+}

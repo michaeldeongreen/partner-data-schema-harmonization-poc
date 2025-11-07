@@ -1,0 +1,10 @@
+{
+  "production": {
+    "api_number": "07-049-00861",
+    "period": "2024-08",
+    "oil_bbl": 1350.91,
+    "gas_mcf": 6400.19,
+    "water_bbl": 135.77,
+    "thp": 2350
+  }
+}

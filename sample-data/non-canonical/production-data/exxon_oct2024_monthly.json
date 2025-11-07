@@ -1,0 +1,47 @@
+{
+  "WellProductionData": {
+    "API_Number": "42-255-98765",
+    "CompanyName": "EXXONMOBIL CORP",
+    "ProductionMonth": "2024-10",
+    "ReportingPeriod": {
+      "StartDate": "2024-10-01",
+      "EndDate": "2024-10-31",
+      "DaysInPeriod": 31,
+      "ActiveDays": 28
+    },
+    "Hydrocarbons": {
+      "CrudeOil": {
+        "GrossProduction_BBL": 12456.78,
+        "NetProduction_BBL": 9345.09,
+        "AverageRate_BOPD": 401.5,
+        "API_Gravity": 42.3
+      },
+      "NaturalGas": {
+        "GrossProduction_MCF": 189234.56,
+        "NetProduction_MCF": 141925.92,
+        "AverageRate_MCFPD": 6104.3,
+        "BTU_Content": 1045
+      },
+      "Condensate": {
+        "GrossProduction_BBL": 567.89,
+        "NetProduction_BBL": 425.92,
+        "AverageRate_BPCD": 18.3
+      }
+    },
+    "FluidProduction": {
+      "ProducedWater_BBL": 2345.67,
+      "WaterCut_Percent": 15.8,
+      "GOR_SCF_BBL": 1520
+    },
+    "WellheadConditions": {
+      "TubingPressure_PSI": 3456,
+      "CasingPressure_PSI": 4123,
+      "FlowlineTemperature_F": 145
+    },
+    "Economics": {
+      "WorkingInterest_Percent": 85.5,
+      "RoyaltyInterest_Percent": 12.5,
+      "NetRevenueInterest_Percent": 73.0
+    }
+  }
+}

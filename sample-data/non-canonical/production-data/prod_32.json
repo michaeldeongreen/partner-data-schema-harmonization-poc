@@ -1,0 +1,10 @@
+{
+  "monthlyReport": {
+    "wellAPI": "32-224-03936",
+    "reportDate": "2024-09",
+    "oilVolume": 2600.16,
+    "gasVolume": 11400.44,
+    "waterVolume": 260.52,
+    "tubing_pressure_psi": 3600
+  }
+}

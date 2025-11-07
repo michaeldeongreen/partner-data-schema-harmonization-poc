@@ -1,0 +1,16 @@
+{
+  "wellInfo": {
+    "api": "22-154-02706",
+    "wellName": "WELL_22_2025",
+    "operator": "CONOCOPHILLIPS",
+    "status": "SHUT_IN"
+  },
+  "location": {
+    "latitude": 2866.374,
+    "longitude": -10110.506,
+    "elevation": 1220
+  },
+  "totalDepth": 12200,
+  "formation": "Permian
+Marcellus"
+}

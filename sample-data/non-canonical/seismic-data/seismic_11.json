@@ -1,0 +1,11 @@
+{
+  "geophysicalData": {
+    "project_name": "SEISMIC_PROJECT_11_2024",
+    "operator": "BP",
+    "service_company": "ION",
+    "acquisition_type": "2D",
+    "coverage_sq_km": 375.1,
+    "spatial_sampling": 80,
+    "acquisitionDate": "2024-12-15"
+  }
+}

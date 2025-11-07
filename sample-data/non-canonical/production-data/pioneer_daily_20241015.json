@@ -1,0 +1,47 @@
+{
+  "dailyProductionReport": {
+    "wellAPI": "05-025-67890",
+    "operatorName": "PIONEER NATURAL RESOURCES",
+    "date": "2024-10-15",
+    "shiftData": [
+      {
+        "shift": "DAY",
+        "startTime": "07:00",
+        "endTime": "19:00",
+        "oilProduced": 145.6,
+        "gasProduced": 2134.7,
+        "waterProduced": 67.8,
+        "chokeSize": "28/64",
+        "tubingPressure": 2567,
+        "casingPressure": 3234,
+        "separatorPressure": 125,
+        "lineTemperature": 142,
+        "pumpStrokes": 8.5,
+        "pumpSpeed": 6.2
+      },
+      {
+        "shift": "NIGHT",
+        "startTime": "19:00",
+        "endTime": "07:00",
+        "oilProduced": 134.2,
+        "gasProduced": 1987.3,
+        "waterProduced": 72.1,
+        "chokeSize": "28/64",
+        "tubingPressure": 2489,
+        "casingPressure": 3156,
+        "separatorPressure": 118,
+        "lineTemperature": 138,
+        "pumpStrokes": 8.2,
+        "pumpSpeed": 5.8
+      }
+    ],
+    "dailyTotals": {
+      "oilBarrels": 279.8,
+      "gasMCF": 4122.0,
+      "waterBarrels": 139.9,
+      "runTime": 24.0,
+      "downTime": 0.0,
+      "comments": "Normal operations"
+    }
+  }
+}

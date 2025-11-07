@@ -1,0 +1,11 @@
+{
+  "dailyDrillingReport": {
+    "api": "11-077-01353",
+    "reportDate": "2024-12-12",
+    "measured_depth": 7200,
+    "footage_drilled": 105,
+    "drilling_rate": 31.7,
+    "mudWeight": 10.3,
+    "bit_size": "IMPREGNATED"
+  }
+}

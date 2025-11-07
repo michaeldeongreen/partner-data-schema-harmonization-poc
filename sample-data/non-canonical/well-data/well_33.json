@@ -1,0 +1,17 @@
+{
+  "wellInfo": {
+    "api": "33-231-04059",
+    "wellName": "WELL_33_2025",
+    "operator": "BP
+CONOCOPHILLIPS",
+    "status": "ACTIVE
+SHUT_IN"
+  },
+  "location": {
+    "lat": 2899.561,
+    "lng": -10165.759,
+    "elev": 1330
+  },
+  "total_md": 13300,
+  "formation": "Marcellus"
+}

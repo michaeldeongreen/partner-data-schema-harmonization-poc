@@ -1,0 +1,17 @@
+{
+  "wellInfo": {
+    "api": "28-196-03444",
+    "wellName": "WELL_28_2025",
+    "operator": "SHELL
+BP
+CONOCOPHILLIPS",
+    "status": "SHUT_IN"
+  },
+  "location": {
+    "latitude": 2884.476,
+    "longitude": -10140.644,
+    "elevation": 1280
+  },
+  "totalDepth": 12800,
+  "formation": "Marcellus"
+}

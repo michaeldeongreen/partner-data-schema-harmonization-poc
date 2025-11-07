@@ -1,0 +1,327 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://schemas.oilgas.com/seismic-data/v1.0.0",
+  "title": "Oil & Gas Seismic Data Schema",
+  "description": "Industry standard schema for seismic survey and geophysical data",
+  "type": "object",
+  "required": ["surveyIdentifier", "client", "contractor", "surveyType", "acquisitionDate"],
+  "properties": {
+    "surveyIdentifier": {
+      "type": "object",
+      "required": ["surveyName"],
+      "properties": {
+        "surveyName": {
+          "type": "string",
+          "maxLength": 200,
+          "description": "Official survey name"
+        },
+        "surveyId": {
+          "type": "string",
+          "description": "Unique survey identifier"
+        },
+        "projectNumber": {
+          "type": "string",
+          "description": "Client project number"
+        }
+      }
+    },
+    "client": {
+      "type": "object",
+      "required": ["name"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "maxLength": 200,
+          "description": "Client company name"
+        },
+        "clientCode": {
+          "type": "string",
+          "description": "Client identifier code"
+        }
+      }
+    },
+    "contractor": {
+      "type": "object",
+      "required": ["name"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "maxLength": 200,
+          "description": "Seismic contractor name"
+        },
+        "contractorCode": {
+          "type": "string",
+          "description": "Contractor identifier"
+        },
+        "crew": {
+          "type": "string",
+          "description": "Crew identifier"
+        }
+      }
+    },
+    "surveyType": {
+      "type": "string",
+      "enum": ["2D_LAND", "2D_MARINE", "3D_LAND", "3D_MARINE", "4D", "VSP", "MICROSEISMIC", "MULTICLIENT"]
+    },
+    "acquisitionDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Survey acquisition start date"
+    },
+    "geometry": {
+      "type": "object",
+      "properties": {
+        "areaCoverage": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Total survey area"
+        },
+        "areaUnit": {
+          "type": "string",
+          "enum": ["SQUARE_MILES", "SQUARE_KILOMETERS", "ACRES", "HECTARES"],
+          "default": "SQUARE_MILES"
+        },
+        "boundingBox": {
+          "type": "object",
+          "required": ["southwest", "northeast"],
+          "properties": {
+            "southwest": {
+              "type": "object",
+              "required": ["latitude", "longitude"],
+              "properties": {
+                "latitude": {
+                  "type": "number",
+                  "minimum": -90,
+                  "maximum": 90
+                },
+                "longitude": {
+                  "type": "number",
+                  "minimum": -180,
+                  "maximum": 180
+                }
+              }
+            },
+            "northeast": {
+              "type": "object",
+              "required": ["latitude", "longitude"],
+              "properties": {
+                "latitude": {
+                  "type": "number",
+                  "minimum": -90,
+                  "maximum": 90
+                },
+                "longitude": {
+                  "type": "number",
+                  "minimum": -180,
+                  "maximum": 180
+                }
+              }
+            }
+          }
+        },
+        "coordinateReferenceSystem": {
+          "type": "string",
+          "description": "CRS/projection system used"
+        },
+        "binDimensions": {
+          "type": "object",
+          "properties": {
+            "inlineSpacing": {
+              "type": "number",
+              "minimum": 0,
+              "description": "Inline bin spacing in meters"
+            },
+            "crosslineSpacing": {
+              "type": "number",
+              "minimum": 0,
+              "description": "Crossline bin spacing in meters"
+            },
+            "totalBins": {
+              "type": "integer",
+              "minimum": 0,
+              "description": "Total number of bins in survey"
+            }
+          }
+        }
+      }
+    },
+    "acquisitionParameters": {
+      "type": "object",
+      "properties": {
+        "sourceConfiguration": {
+          "type": "object",
+          "properties": {
+            "sourceType": {
+              "type": "string",
+              "enum": ["VIBROSEIS", "DYNAMITE", "AIRGUN", "WATERGUN", "SPARKER", "BOOMER"]
+            },
+            "sourceArray": {
+              "type": "string",
+              "description": "Source array configuration"
+            },
+            "sourceInterval": {
+              "type": "number",
+              "minimum": 0,
+              "description": "Source point interval in meters/feet"
+            },
+            "sourceStrength": {
+              "type": "number",
+              "description": "Source strength (varies by type)"
+            }
+          }
+        },
+        "receiverConfiguration": {
+          "type": "object",
+          "properties": {
+            "receiverType": {
+              "type": "string",
+              "enum": ["GEOPHONE", "HYDROPHONE", "ACCELEROMETER", "DIGITAL_SENSOR"]
+            },
+            "receiverFrequency": {
+              "type": "number",
+              "minimum": 0,
+              "description": "Receiver natural frequency in Hz"
+            },
+            "receiverInterval": {
+              "type": "number",
+              "minimum": 0,
+              "description": "Receiver group interval in meters/feet"
+            },
+            "channelsPerArray": {
+              "type": "integer",
+              "minimum": 1,
+              "description": "Number of channels per receiver array"
+            }
+          }
+        },
+        "recordingParameters": {
+          "type": "object",
+          "properties": {
+            "sampleInterval": {
+              "type": "number",
+              "minimum": 0,
+              "description": "Sample interval in milliseconds"
+            },
+            "recordLength": {
+              "type": "number",
+              "minimum": 0,
+              "description": "Record length in seconds or milliseconds"
+            },
+            "nominalFold": {
+              "type": "integer",
+              "minimum": 1,
+              "description": "Nominal fold coverage"
+            },
+            "maxOffset": {
+              "type": "number",
+              "minimum": 0,
+              "description": "Maximum source-receiver offset"
+            }
+          }
+        }
+      }
+    },
+    "processingInformation": {
+      "type": "object",
+      "properties": {
+        "processor": {
+          "type": "string",
+          "description": "Processing contractor name"
+        },
+        "processingCenter": {
+          "type": "string",
+          "description": "Location where processing was performed"
+        },
+        "processingDate": {
+          "type": "string",
+          "format": "date",
+          "description": "Date processing completed"
+        },
+        "softwareVersion": {
+          "type": "string",
+          "description": "Processing software and version"
+        },
+        "processingFlow": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Sequential list of processing steps"
+        },
+        "migrationType": {
+          "type": "string",
+          "enum": ["PSTM", "PSDM", "KPSTM", "KPSDM", "RTM"],
+          "description": "Type of migration applied"
+        },
+        "datumElevation": {
+          "type": "number",
+          "description": "Processing datum elevation"
+        },
+        "velocityModel": {
+          "type": "string",
+          "description": "Velocity model type used"
+        }
+      }
+    },
+    "qualityMetrics": {
+      "type": "object",
+      "properties": {
+        "signalToNoiseRatio": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Average S/N ratio"
+        },
+        "frequencyBandwidth": {
+          "type": "object",
+          "properties": {
+            "lowFrequency": {
+              "type": "number",
+              "minimum": 0,
+              "description": "Low frequency cutoff in Hz"
+            },
+            "highFrequency": {
+              "type": "number",
+              "minimum": 0,
+              "description": "High frequency cutoff in Hz"
+            },
+            "peakFrequency": {
+              "type": "number",
+              "minimum": 0,
+              "description": "Peak frequency in Hz"
+            }
+          }
+        },
+        "verticalResolution": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Vertical resolution in feet/meters"
+        },
+        "horizontalResolution": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Horizontal resolution in feet/meters"
+        }
+      }
+    },
+    "deliverables": {
+      "type": "object",
+      "properties": {
+        "dataFormats": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["SEGY", "SEGD", "SEG2", "LAS", "DLIS", "LIS"]
+          },
+          "description": "Data delivery formats"
+        },
+        "interpretationProducts": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Interpretation deliverables"
+        }
+      }
+    }
+  }
+}

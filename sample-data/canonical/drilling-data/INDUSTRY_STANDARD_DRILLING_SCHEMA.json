@@ -1,0 +1,270 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://schemas.oilgas.com/drilling-data/v1.0.0",
+  "title": "Oil & Gas Drilling Data Schema",
+  "description": "Industry standard schema for drilling operations and completion data",
+  "type": "object",
+  "required": ["wellIdentifier", "operator", "reportDate", "reportType"],
+  "properties": {
+    "wellIdentifier": {
+      "type": "object",
+      "required": ["apiNumber"],
+      "properties": {
+        "apiNumber": {
+          "type": "string",
+          "pattern": "^[0-9]{2}-[0-9]{3}-[0-9]{5}$"
+        },
+        "wellName": {
+          "type": "string"
+        }
+      }
+    },
+    "operator": {
+      "type": "object",
+      "required": ["name"],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "contractor": {
+          "type": "string",
+          "description": "Drilling contractor name"
+        },
+        "rigNumber": {
+          "type": "string",
+          "description": "Rig identification number"
+        }
+      }
+    },
+    "reportDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Date of the drilling report"
+    },
+    "reportType": {
+      "type": "string",
+      "enum": ["DAILY_DRILLING_REPORT", "COMPLETION_REPORT", "DRILLING_SUMMARY", "BIT_RECORD"]
+    },
+    "depthProgress": {
+      "type": "object",
+      "properties": {
+        "previousDepth": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Depth at start of period in feet"
+        },
+        "currentDepth": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Current depth in feet"
+        },
+        "footageDrilled": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Footage drilled during period"
+        },
+        "totalMeasuredDepth": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Total measured depth in feet"
+        },
+        "totalVerticalDepth": {
+          "type": "number",
+          "minimum": 0,
+          "description": "True vertical depth in feet"
+        }
+      }
+    },
+    "drillingParameters": {
+      "type": "object",
+      "properties": {
+        "weightOnBit": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Weight on bit in pounds"
+        },
+        "rotarySpeed": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Rotary speed in RPM"
+        },
+        "pumpPressure": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Pump pressure in PSI"
+        },
+        "flowRate": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Mud flow rate in GPM"
+        },
+        "torque": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Drilling torque in ft-lbs"
+        },
+        "rateOfPenetration": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Average ROP in feet/hour"
+        }
+      }
+    },
+    "mudProperties": {
+      "type": "object",
+      "properties": {
+        "mudWeight": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Mud weight in ppg"
+        },
+        "viscosity": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Mud viscosity in seconds"
+        },
+        "gelStrength": {
+          "type": "string",
+          "description": "Gel strength readings"
+        },
+        "ph": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 14,
+          "description": "Mud pH"
+        },
+        "chlorides": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Chloride content in ppm"
+        },
+        "temperature": {
+          "type": "number",
+          "description": "Mud temperature in Fahrenheit"
+        }
+      }
+    },
+    "bitRecord": {
+      "type": "object",
+      "properties": {
+        "bitNumber": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "Bit run number"
+        },
+        "bitType": {
+          "type": "string",
+          "enum": ["PDC", "TRICONE", "DIAMOND", "IMPREGNATED", "HYBRID"]
+        },
+        "bitSize": {
+          "type": "number",
+          "description": "Bit size in inches"
+        },
+        "inDepth": {
+          "type": "number",
+          "description": "Depth bit went in hole"
+        },
+        "outDepth": {
+          "type": "number",
+          "description": "Depth bit came out of hole"
+        },
+        "footageDrilled": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Total footage drilled with bit"
+        },
+        "hoursOnBottom": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Hours drilling with bit"
+        }
+      }
+    },
+    "completionData": {
+      "type": "object",
+      "properties": {
+        "completionType": {
+          "type": "string",
+          "enum": ["CASED_HOLE", "OPEN_HOLE", "MULTISTAGE_FRACTURE", "GRAVEL_PACK", "LINER"]
+        },
+        "perforationData": {
+          "type": "object",
+          "properties": {
+            "topDepth": {
+              "type": "number",
+              "description": "Top perforation depth in feet"
+            },
+            "bottomDepth": {
+              "type": "number",
+              "description": "Bottom perforation depth in feet"
+            },
+            "shotsPerFoot": {
+              "type": "number",
+              "description": "Perforation density"
+            },
+            "gunSize": {
+              "type": "number",
+              "description": "Perforation gun size in inches"
+            }
+          }
+        },
+        "fracturingData": {
+          "type": "object",
+          "properties": {
+            "totalStages": {
+              "type": "integer",
+              "minimum": 1,
+              "description": "Total number of frac stages"
+            },
+            "totalProppant": {
+              "type": "number",
+              "minimum": 0,
+              "description": "Total proppant pumped in pounds"
+            },
+            "totalFluid": {
+              "type": "number",
+              "minimum": 0,
+              "description": "Total frac fluid pumped in barrels"
+            },
+            "proppantType": {
+              "type": "string",
+              "description": "Type of proppant used"
+            },
+            "fluidSystem": {
+              "type": "string",
+              "description": "Fracturing fluid system type"
+            }
+          }
+        }
+      }
+    },
+    "operations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["timeStart", "activity"],
+        "properties": {
+          "timeStart": {
+            "type": "string",
+            "pattern": "^([01]?[0-9]|2[0-3]):[0-5][0-9]$",
+            "description": "Start time in HH:MM format"
+          },
+          "timeEnd": {
+            "type": "string",
+            "pattern": "^([01]?[0-9]|2[0-3]):[0-5][0-9]$",
+            "description": "End time in HH:MM format"
+          },
+          "activity": {
+            "type": "string",
+            "description": "Description of drilling activity"
+          },
+          "duration": {
+            "type": "number",
+            "minimum": 0,
+            "description": "Activity duration in hours"
+          }
+        }
+      }
+    }
+  }
+}

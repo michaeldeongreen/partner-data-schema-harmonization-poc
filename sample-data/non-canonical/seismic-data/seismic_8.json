@@ -1,0 +1,13 @@
+{
+  "seismicSurvey": {
+    "surveyName": "SEISMIC_PROJECT_8_2024",
+    "client": "CHEVRON
+EXXON
+SHELL",
+    "contractor": "ION",
+    "surveyType": "3D",
+    "areaSize": 300.8,
+    "spatial_sampling": 65,
+    "acquisitionDate": "2024-09-15"
+  }
+}

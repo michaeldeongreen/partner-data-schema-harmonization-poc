@@ -1,0 +1,17 @@
+{
+  "wellInfo": {
+    "api": "17-119-02091",
+    "wellName": "WELL_17_2025",
+    "operator": "BP
+CONOCOPHILLIPS",
+    "status": "PLUGGED"
+  },
+  "location": {
+    "lat": 2851.289,
+    "lng": -10085.391,
+    "elev": 1170
+  },
+  "total_md": 11700,
+  "formation": "Permian
+Marcellus"
+}

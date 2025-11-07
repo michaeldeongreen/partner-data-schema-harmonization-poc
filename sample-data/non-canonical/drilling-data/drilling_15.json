@@ -1,0 +1,13 @@
+{
+  "dailyDrillingReport": {
+    "api": "15-105-01845",
+    "reportDate": "2024-04-16",
+    "measured_depth": 8000,
+    "footage_drilled": 125,
+    "rop
+rate_of_penetration": 35.5,
+    "mudWeight": 9.5,
+    "bit_size": "PDC
+TRICONE"
+  }
+}

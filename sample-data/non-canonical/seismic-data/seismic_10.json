@@ -1,0 +1,11 @@
+{
+  "seismicSurvey": {
+    "surveyName": "SEISMIC_PROJECT_10_2024",
+    "client": "SHELL",
+    "contractor": "WesternGeco",
+    "surveyType": "3D",
+    "areaSize": 350.0,
+    "grid_spacing": 75,
+    "acquisitionDate": "2024-11-15"
+  }
+}

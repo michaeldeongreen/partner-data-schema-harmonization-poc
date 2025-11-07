@@ -1,0 +1,311 @@
+﻿@page "/"
+@rendermode InteractiveServer
+@using SchemaHarmonizer.Components
+@using Microsoft.AspNetCore.Components.Web
+
+<PageTitle>Schema Harmonizer</PageTitle>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="mb-4">Schema Harmonizer</h1>
+        </div>
+    </div>
+
+    <!-- AI Connection Test Section -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">AI Model Connection</h5>
+                    <div class="d-flex align-items-center gap-3">
+                        <button class="btn btn-info" type="button" @onclick="TestAIConnection"
+                            disabled="@isTestingConnection">
+                            @if (isTestingConnection)
+                            {
+                                <span class="spinner-border spinner-border-sm me-2"></span>
+                                <text>Testing...</text>
+                            }
+                            else
+                            {
+                                <text>Test AI Connection</text>
+                            }
+                        </button>
+                        @if (aiTestResult != null)
+                        {
+                            <div class="alert @(aiTestResult.IsConnected ? "alert-success" : "alert-danger") mb-0 py-2"
+                                role="alert">
+                                @aiTestResult.Message
+                                @if (!string.IsNullOrEmpty(aiTestResult.ErrorDetails))
+                                {
+                                    <br>
+
+                                    <small>@aiTestResult.ErrorDetails</small>
+                                }
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Canonical Schema Section -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <label class="form-label fw-bold">Canonical Schema File:</label>
+        </div>
+        <div class="col-auto">
+            <button class="btn btn-outline-primary" type="button" @onclick="BrowseStandardSchema">
+                Browse
+            </button>
+        </div>
+        <div class="col">
+            <input type="text" class="form-control" @bind="standardSchemaPath"
+                placeholder="Select canonical schema file..." readonly />
+        </div>
+    </div>
+
+    <!-- Non-Canonical Schema Section -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <label class="form-label fw-bold">Non-Canonical Schema File:</label>
+        </div>
+        <div class="col-auto">
+            <button class="btn btn-outline-primary" type="button" @onclick="BrowseNonStandardSchema">
+                Browse
+            </button>
+        </div>
+        <div class="col">
+            <input type="text" class="form-control" @bind="nonStandardSchemaPath"
+                placeholder="Select non-canonical schema file..." readonly />
+        </div>
+    </div>
+
+    <!-- Schema Content Display Section -->
+    <div class="row mb-4">
+        <div class="col-6">
+            <label class="form-label fw-bold">Canonical Schema Content:</label>
+            <textarea class="form-control" rows="10" @bind="standardSchemaContent"
+                placeholder="Canonical schema content will appear here..." readonly
+                style="resize: none; font-family: monospace; font-size: 12px;"></textarea>
+        </div>
+        <div class="col-6">
+            <label class="form-label fw-bold">Non-Canonical Schema Content:</label>
+            <textarea class="form-control" rows="10" @bind="nonStandardSchemaContent"
+                placeholder="Non-canonical schema content will appear here..." readonly
+                style="resize: none; font-family: monospace; font-size: 12px;"></textarea>
+        </div>
+    </div>
+
+    <!-- Harmonization Prompt Section -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <label class="form-label fw-bold">AI Harmonization Prompt:</label>
+            <small class="text-muted d-block mb-2">
+                Use {CANONICAL_SCHEMA} for the template, {NON_CANONICAL_DATA} for input data, and {FEW_SHOT_EXAMPLES}
+                for context-aware examples
+            </small>
+            <textarea class="form-control" rows="8" @bind="harmonizationPrompt"
+                placeholder="Enter your harmonization prompt here..."
+                style="resize: vertical; font-family: monospace; font-size: 12px;"></textarea>
+        </div>
+    </div>
+
+    <!-- JSON Output Section -->
+    <div class="row">
+        <div class="col-12">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+                <label class="form-label fw-bold mb-0">Harmonized JSON Output:</label>
+                @if (currentTokenStats != null)
+                {
+                    <div class="d-flex gap-3">
+                        <span class="badge bg-info text-dark">
+                            <i class="bi bi-calculator me-1"></i>
+                            Input: @InputTokens.ToString("N0") tokens
+                        </span>
+                        <span class="badge bg-warning text-dark">
+                            <i class="bi bi-arrow-right me-1"></i>
+                            Est. Response: @EstimatedResponseTokens.ToString("N0") tokens
+                        </span>
+                        <span
+                            class="badge @(EstimatedTotalTokens > 15000 ? "bg-danger" : EstimatedTotalTokens > 10000 ? "bg-warning" : "bg-success")">
+                            <i class="bi bi-speedometer2 me-1"></i>
+                            Est. Total: @EstimatedTotalTokens.ToString("N0") tokens
+                        </span>
+                    </div>
+                }
+            </div>
+            <div class="position-relative">
+                <textarea class="form-control" rows="15" @bind="jsonOutput"
+                    placeholder="Harmonized JSON will appear here..." readonly style="resize: none;"></textarea>
+                <div class="position-absolute d-flex gap-2" style="bottom: 10px; right: 10px;">
+                    <button class="btn btn-success" @onclick="HarmonizeSchemas" disabled="@(!CanHarmonize || isHarmonizing)">
+                        @if (isHarmonizing)
+                        {
+                            <span class="spinner-border spinner-border-sm me-2"></span>
+                            <text>Harmonizing...</text>
+                        }
+                        else
+                        {
+                            <text>Harmonize</text>
+                        }
+                    </button>
+                    @if (!string.IsNullOrEmpty(jsonOutput) && !isHarmonizing)
+                    {
+                        <button type="button" class="btn btn-outline-info" @onclick="ValidateAccuracy" disabled="@isValidatingAccuracy">
+                            @if (isValidatingAccuracy)
+                            {
+                                <span class="spinner-border spinner-border-sm me-1"></span>
+                            }
+                            else
+                            {
+                                <i class="bi bi-check-circle me-1"></i>
+                            }
+                            Validate
+                        </button>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Accuracy Validation Results -->
+    @if (accuracyResult != null || isValidatingAccuracy)
+    {
+        <div class="row mt-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        <h6 class="mb-0">
+                            <i class="bi bi-check-circle me-2"></i>
+                            Harmonization Accuracy Analysis
+                            @if (isValidatingAccuracy)
+                            {
+                                <span class="spinner-border spinner-border-sm ms-2"></span>
+                            }
+                        </h6>
+                    </div>
+                    <div class="card-body">
+                        @if (isValidatingAccuracy)
+                        {
+                            <div class="text-center py-3">
+                                <div class="spinner-border text-primary me-2"></div>
+                                <span>Validating harmonization accuracy...</span>
+                            </div>
+                        }
+                        else if (accuracyResult != null)
+                        {
+                            <!-- Overall Accuracy Score -->
+                            <div class="row mb-3">
+                                <div class="col-md-3">
+                                    <div class="text-center">
+                                        <div class="display-4 fw-bold @(accuracyResult.OverallAccuracyPercentage >= 90 ? "text-success" : accuracyResult.OverallAccuracyPercentage >= 70 ? "text-warning" : "text-danger")">
+                                            @accuracyResult.OverallAccuracyPercentage.ToString("F1")%
+                                        </div>
+                                        <small class="text-muted">Overall Accuracy</small>
+                                    </div>
+                                </div>
+                                <div class="col-md-9">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <strong>Structural Accuracy</strong>
+                                            <div class="progress mt-1">
+                                                <div class="progress-bar @(accuracyResult.StructuralAccuracy >= 90 ? "bg-success" : accuracyResult.StructuralAccuracy >= 70 ? "bg-warning" : "bg-danger")" 
+                                                     style="width: @(accuracyResult.StructuralAccuracy)%"></div>
+                                            </div>
+                                            <small class="text-muted">@accuracyResult.StructuralAccuracy.ToString("F1")%</small>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <strong>Data Completeness</strong>
+                                            <div class="progress mt-1">
+                                                <div class="progress-bar @(accuracyResult.DataCompleteness >= 90 ? "bg-success" : accuracyResult.DataCompleteness >= 70 ? "bg-warning" : "bg-danger")" 
+                                                     style="width: @(accuracyResult.DataCompleteness)%"></div>
+                                            </div>
+                                            <small class="text-muted">@accuracyResult.DataCompleteness.ToString("F1")%</small>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <strong>Field Mapping</strong>
+                                            <div class="progress mt-1">
+                                                <div class="progress-bar @(accuracyResult.FieldMappingAccuracy >= 90 ? "bg-success" : accuracyResult.FieldMappingAccuracy >= 70 ? "bg-warning" : "bg-danger")" 
+                                                     style="width: @(accuracyResult.FieldMappingAccuracy)%"></div>
+                                            </div>
+                                            <small class="text-muted">@accuracyResult.FieldMappingAccuracy.ToString("F1")%</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Issues and Success Summary -->
+                            <div class="row">
+                                @if (accuracyResult.Issues.Any())
+                                {
+                                    <div class="col-md-6">
+                                        <h6 class="text-danger">
+                                            <i class="bi bi-exclamation-triangle me-1"></i>
+                                            Issues Found (@accuracyResult.Issues.Count)
+                                        </h6>
+                                        <div class="list-group list-group-flush" style="max-height: 200px; overflow-y: auto;">
+                                            @foreach (var issue in accuracyResult.Issues.Take(10))
+                                            {
+                                                <div class="list-group-item list-group-item-action p-2">
+                                                    <div class="d-flex justify-content-between align-items-start">
+                                                        <div class="flex-grow-1">
+                                                            <span class="badge @(issue.Severity == "critical" ? "bg-danger" : issue.Severity == "high" ? "bg-warning" : "bg-secondary") me-2">
+                                                                @issue.Severity
+                                                            </span>
+                                                            <small class="fw-bold">@issue.Type</small>
+                                                            <p class="mb-1 small">@issue.Description</p>
+                                                            @if (!string.IsNullOrWhiteSpace(issue.Field))
+                                                            {
+                                                                <small class="text-muted">Field: @issue.Field</small>
+                                                            }
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            }
+                                        </div>
+                                        @if (accuracyResult.Issues.Count > 10)
+                                        {
+                                            <small class="text-muted">Showing first 10 of @accuracyResult.Issues.Count issues</small>
+                                        }
+                                    </div>
+                                }
+
+                                @if (accuracyResult.SuccessfulMappings.Any())
+                                {
+                                    <div class="col-md-6">
+                                        <h6 class="text-success">
+                                            <i class="bi bi-check-circle me-1"></i>
+                                            Successful Mappings (@accuracyResult.SuccessfulMappings.Count)
+                                        </h6>
+                                        <div class="list-group list-group-flush" style="max-height: 200px; overflow-y: auto;">
+                                            @foreach (var success in accuracyResult.SuccessfulMappings.Take(10))
+                                            {
+                                                <div class="list-group-item p-2">
+                                                    <i class="bi bi-check text-success me-2"></i>
+                                                    <small>@success</small>
+                                                </div>
+                                            }
+                                        </div>
+                                        @if (accuracyResult.SuccessfulMappings.Count > 10)
+                                        {
+                                            <small class="text-muted">Showing first 10 of @accuracyResult.SuccessfulMappings.Count successes</small>
+                                        }
+                                    </div>
+                                }
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+<!-- File Browser Modals -->
+<FileBrowser @ref="standardFileBrowser" Title="Canonical Schema File" FileType="all" IsStandard="true"
+    OnFileSelected="OnStandardSchemaSelected" />
+
+<FileBrowser @ref="nonStandardFileBrowser" Title="Non-Canonical Schema File" FileType="all" IsStandard="false"
+    OnFileSelected="OnNonStandardSchemaSelected" />

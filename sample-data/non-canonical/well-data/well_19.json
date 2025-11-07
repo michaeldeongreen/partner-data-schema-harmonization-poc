@@ -1,0 +1,15 @@
+{
+  "wellInfo": {
+    "api": "19-133-02337",
+    "wellName": "WELL_19_2025",
+    "operator": "MARATHON",
+    "status": "SHUT_IN"
+  },
+  "location": {
+    "lat": 2857.323,
+    "lng": -10095.437,
+    "elev": 1190
+  },
+  "total_md": 11900,
+  "formation": "Niobrara"
+}

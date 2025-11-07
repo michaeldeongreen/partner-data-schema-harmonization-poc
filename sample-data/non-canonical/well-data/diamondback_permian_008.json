@@ -1,0 +1,45 @@
+{
+  "WellRecord": {
+    "BasicInfo": {
+      "API": "42-165-45789",
+      "WellID": "PERMIAN_TOWER_15H",
+      "Operator": "DIAMONDBACK ENERGY",
+      "LeaseID": "TOWER_UNIT_2024",
+      "Status": "ACTIVE"
+    },
+    "LocationInfo": {
+      "State": "TX",
+      "County": "MIDLAND",
+      "SurfaceLocation": {
+        "Lat": 31.9876,
+        "Long": -102.1234,
+        "GroundElevation": 2850
+      },
+      "BottomHoleLocation": {
+        "Lat": 31.9823,
+        "Long": -102.0987,
+        "SubseaDepth": -6890
+      }
+    },
+    "KeyDates": {
+      "PermitDate": "2024-01-12",
+      "SpudDate": "2024-02-18",
+      "TDDate": "2024-03-30",
+      "CompletionDate": "2024-04-22"
+    },
+    "WellSpecs": {
+      "WellType": "OIL_HORIZONTAL",
+      "TotalMD": 19856,
+      "TotalTVD": 9740,
+      "LateralLength": 9876,
+      "PrimaryTarget": "Wolfcamp B",
+      "SecondaryTarget": "Wolfcamp A"
+    },
+    "CasingProgram": [
+      {"Type": "Conductor", "Size": 30, "Depth": 200, "Grade": "B"},
+      {"Type": "Surface", "Size": 20, "Depth": 3200, "Grade": "K55"},
+      {"Type": "Intermediate", "Size": 13.375, "Depth": 9800, "Grade": "L80"},
+      {"Type": "Production", "Size": 7, "Depth": 19856, "Grade": "P110"}
+    ]
+  }
+}
