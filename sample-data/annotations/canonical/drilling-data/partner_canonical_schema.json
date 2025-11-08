@@ -1,0 +1,17 @@
+{
+    "wellId": "Alpha-1",
+    "measuredDepth": {
+        "value": 8500,
+        "unit": "ft"
+    },
+    "mudWeight": {
+        "value": 10.5,
+        "unit": "ppg"
+    },
+    "rateOfPenetration": {
+        "value": 60,
+        "unit": "ft/hr"
+    },
+    "formationType": "Sandstone",
+    "timestamp": "2001-02-06"
+}

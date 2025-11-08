@@ -1,0 +1,54 @@
+{
+    "wellIdentifier": {
+        "apiNumber": "48-135-67890",
+        "wellName": "Permian Basin Unit #4H"
+    },
+    "operator": {
+        "name": "Chevron Corporation"
+    },
+    "reportingPeriod": {
+        "startDate": "2024-10-01",
+        "endDate": "2024-10-31",
+        "reportType": "MONTHLY",
+        "activeDays": 31
+    },
+    "productionVolumes": {
+        "oil": {
+            "grossVolume": 18500.0,
+            "netVolume": 17825.0,
+            "averageRate": 597.0,
+            "apiGravity": 42.5
+        },
+        "gas": {
+            "grossVolume": 92500.0,
+            "netVolume": 89125.0,
+            "averageRate": 2985.5,
+            "btuContent": 1125.0
+        },
+        "water": {
+            "volume": 3200.0,
+            "averageRate": 103.2,
+            "waterCut": 15.2
+        },
+        "condensate": {
+            "volume": 850.0,
+            "averageRate": 27.4
+        }
+    },
+    "wellheadConditions": {
+        "tubingPressure": 2850.0,
+        "casingPressure": 3150.0,
+        "flowlineTemperature": 165.0,
+        "chokeSize": "32/64"
+    },
+    "economicInterests": {
+        "workingInterest": 87.5,
+        "royaltyInterest": 18.75,
+        "netRevenueInterest": 71.09
+    },
+    "qualityMetrics": {
+        "gasOilRatio": 5000.0,
+        "h2sContent": 125.0,
+        "co2Content": 2.8
+    }
+}

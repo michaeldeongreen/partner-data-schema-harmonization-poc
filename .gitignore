@@ -114,3 +114,4 @@ local.settings.json
 !package.json
 !tsconfig.json
 !**/*.config.json
+.fake

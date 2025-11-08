@@ -1,0 +1,32 @@
+{
+    "surveyId": "Eagle_Ford_3D_2024",
+    "surveyName": "Eagle Ford 3D Survey",
+    "acquisitionDate": "2024-11-11",
+    "surveyArea": {
+        "coordinates": {
+            "x": 123456.78,
+            "y": 987654.32,
+            "coordinateSystem": "NAD83"
+        },
+        "areaSize": {
+            "value": 25.5,
+            "unit": "sq_miles"
+        }
+    },
+    "processingParameters": {
+        "foldCoverage": 60,
+        "binSize": {
+            "x": 82.5,
+            "y": 82.5,
+            "unit": "feet"
+        },
+        "migrationVelocity": {
+            "value": 8500,
+            "unit": "ft/s"
+        }
+    },
+    "dataQuality": {
+        "signalToNoise": 85.5,
+        "resolution": "high"
+    }
+}

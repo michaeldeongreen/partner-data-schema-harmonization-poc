@@ -1,0 +1,33 @@
+{
+    "wellId": "API-42-123-45678",
+    "wellName": "Smith #1",
+    "location": {
+        "latitude": 32.7767,
+        "longitude": -96.7970,
+        "county": "Dallas",
+        "state": "TX",
+        "country": "USA"
+    },
+    "wellDetails": {
+        "apiNumber": "42-123-45678",
+        "wellStatus": "PRODUCING",
+        "wellType": "HORIZONTAL",
+        "spudDate": "2023-06-15",
+        "completionDate": "2023-08-20"
+    },
+    "formation": {
+        "primaryFormation": "Eagle Ford",
+        "topDepth": {
+            "value": 8500,
+            "unit": "ft"
+        },
+        "bottomDepth": {
+            "value": 9200,
+            "unit": "ft"
+        }
+    },
+    "operator": {
+        "name": "Example Corp",
+        "operatorCode": "EC001"
+    }
+}

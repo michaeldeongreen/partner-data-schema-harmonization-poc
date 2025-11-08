@@ -1,0 +1,97 @@
+{
+    "surveyIdentifier": {
+        "surveyName": "Eagle Ford 3D Survey Block 42",
+        "surveyId": "EF3D-2024-042",
+        "projectNumber": "PROJ-EF-24-007"
+    },
+    "client": {
+        "name": "ExxonMobil Corporation",
+        "clientCode": "XOM"
+    },
+    "contractor": {
+        "name": "TGS-NOPEC Geophysical Company",
+        "contractorCode": "TGS",
+        "crew": "Crew-247"
+    },
+    "surveyType": "3D_LAND",
+    "acquisitionDate": "2024-08-15",
+    "geometry": {
+        "areaCoverage": 125.5,
+        "areaUnit": "SQUARE_MILES",
+        "boundingBox": {
+            "southwest": {
+                "latitude": 28.4567,
+                "longitude": -98.7654
+            },
+            "northeast": {
+                "latitude": 28.6789,
+                "longitude": -98.5432
+            }
+        },
+        "coordinateReferenceSystem": "UTM Zone 14N NAD83",
+        "binDimensions": {
+            "inlineSpacing": 25.0,
+            "crosslineSpacing": 25.0,
+            "totalBins": 1250000
+        }
+    },
+    "acquisitionParameters": {
+        "sourceConfiguration": {
+            "sourceType": "VIBROSEIS",
+            "sourceArray": "4 x 62,000 lb Vibrators",
+            "sourceInterval": 50.0,
+            "sourceStrength": 62000.0
+        },
+        "receiverConfiguration": {
+            "receiverType": "GEOPHONE",
+            "receiverFrequency": 10.0,
+            "receiverInterval": 25.0,
+            "channelsPerArray": 12
+        },
+        "recordingParameters": {
+            "sampleInterval": 2.0,
+            "recordLength": 6000.0,
+            "nominalFold": 96,
+            "maxOffset": 6000.0
+        }
+    },
+    "processingInformation": {
+        "processor": "WesternGeco Processing Center",
+        "processingCenter": "Houston, TX",
+        "processingDate": "2024-10-15",
+        "softwareVersion": "Omega 2024.1",
+        "processingFlow": [
+            "Noise Attenuation",
+            "Surface Consistent Deconvolution",
+            "Velocity Analysis",
+            "DMO Correction",
+            "Post-Stack Time Migration",
+            "Spectral Balancing"
+        ],
+        "migrationType": "PSTM",
+        "datumElevation": 500.0,
+        "velocityModel": "Layered Velocity Model v2.1"
+    },
+    "qualityMetrics": {
+        "signalToNoiseRatio": 18.5,
+        "frequencyBandwidth": {
+            "lowFrequency": 8.0,
+            "highFrequency": 85.0,
+            "peakFrequency": 35.0
+        },
+        "verticalResolution": 25.0,
+        "horizontalResolution": 75.0
+    },
+    "deliverables": {
+        "dataFormats": [
+            "SEGY",
+            "LAS"
+        ],
+        "interpretationProducts": [
+            "Structural Time Maps",
+            "Amplitude Extraction Maps",
+            "Velocity Model",
+            "Processing Report"
+        ]
+    }
+}

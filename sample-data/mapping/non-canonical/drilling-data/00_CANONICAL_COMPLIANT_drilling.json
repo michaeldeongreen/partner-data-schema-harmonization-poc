@@ -1,0 +1,93 @@
+{
+    "wellIdentifier": {
+        "apiNumber": "42-123-45678",
+        "wellName": "Eagle Ford Unit #1H"
+    },
+    "operator": {
+        "name": "Pioneer Natural Resources",
+        "contractor": "Precision Drilling Corporation",
+        "rigNumber": "Rig-487"
+    },
+    "reportDate": "2024-11-07",
+    "reportType": "DAILY_DRILLING_REPORT",
+    "depthProgress": {
+        "previousDepth": 12450.0,
+        "currentDepth": 12720.0,
+        "footageDrilled": 270.0,
+        "totalMeasuredDepth": 12720.0,
+        "totalVerticalDepth": 8650.0
+    },
+    "drillingParameters": {
+        "weightOnBit": 35000.0,
+        "rotarySpeed": 120.0,
+        "pumpPressure": 3200.0,
+        "flowRate": 420.0,
+        "torque": 18500.0,
+        "rateOfPenetration": 45.2
+    },
+    "mudProperties": {
+        "mudWeight": 12.8,
+        "viscosity": 48.0,
+        "gelStrength": "12/18",
+        "ph": 9.2,
+        "chlorides": 18500.0,
+        "temperature": 145.0
+    },
+    "bitRecord": {
+        "bitNumber": 3,
+        "bitType": "PDC",
+        "bitSize": 8.5,
+        "inDepth": 11850.0,
+        "outDepth": 12720.0,
+        "footageDrilled": 870.0,
+        "hoursOnBottom": 28.5
+    },
+    "completionData": {
+        "completionType": "MULTISTAGE_FRACTURE",
+        "perforationData": {
+            "topDepth": 8450.0,
+            "bottomDepth": 8650.0,
+            "shotsPerFoot": 16.0,
+            "gunSize": 4.5
+        },
+        "fracturingData": {
+            "totalStages": 42,
+            "totalProppant": 4250000.0,
+            "totalFluid": 185000.0,
+            "proppantType": "40/70 White Sand with Ceramic",
+            "fluidSystem": "Hybrid Crosslinked Gel"
+        }
+    },
+    "operations": [
+        {
+            "timeStart": "06:00",
+            "timeEnd": "08:30",
+            "activity": "Trip in hole with 8.5 inch PDC bit",
+            "duration": 2.5
+        },
+        {
+            "timeStart": "08:30",
+            "timeEnd": "14:15",
+            "activity": "Drilling 8.5 inch hole from 12450 to 12620 feet",
+            "duration": 5.75
+        },
+        {
+            "timeStart": "14:15",
+            "timeEnd": "16:00",
+            "activity": "Connection and survey operations",
+            "duration": 1.75
+        },
+        {
+            "timeStart": "16:00",
+            "timeEnd": "22:30",
+            "activity": "Continue drilling to 12720 feet MD",
+            "duration": 6.5
+        },
+        {
+            "timeStart": "22:30",
+            "timeEnd": "24:00",
+            "activity": "Circulate and condition mud",
+            "duration": 1.5
+        }
+    ]
+}

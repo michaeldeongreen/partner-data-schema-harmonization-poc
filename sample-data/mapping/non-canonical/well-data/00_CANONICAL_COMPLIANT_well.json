@@ -1,0 +1,61 @@
+{
+    "wellIdentifier": {
+        "apiNumber": "42-297-54321",
+        "wellName": "Bakken Unit #7H",
+        "uwi": "100/07-15-045-22W4/0"
+    },
+    "operator": {
+        "name": "Continental Resources Inc",
+        "operatorCode": "CLR"
+    },
+    "location": {
+        "surfaceCoordinates": {
+            "latitude": 47.8975,
+            "longitude": -103.2341,
+            "datum": "NAD83"
+        },
+        "bottomholeCoordinates": {
+            "latitude": 47.8956,
+            "longitude": -103.2178
+        },
+        "elevation": 2145.0
+    },
+    "status": "PRODUCING",
+    "dates": {
+        "spudDate": "2024-03-15",
+        "completionDate": "2024-05-22",
+        "firstProductionDate": "2024-06-01"
+    },
+    "wellDesign": {
+        "wellType": "HORIZONTAL",
+        "totalMeasuredDepth": 21450.0,
+        "totalVerticalDepth": 10825.0,
+        "primaryTarget": "Bakken Formation"
+    },
+    "casingProgram": [
+        {
+            "casingSize": 13.375,
+            "settingDepth": 750.0,
+            "weight": 68.0,
+            "grade": "H-40"
+        },
+        {
+            "casingSize": 9.625,
+            "settingDepth": 4250.0,
+            "weight": 47.0,
+            "grade": "N-80"
+        },
+        {
+            "casingSize": 7.0,
+            "settingDepth": 10850.0,
+            "weight": 26.0,
+            "grade": "P-110"
+        },
+        {
+            "casingSize": 4.5,
+            "settingDepth": 21450.0,
+            "weight": 13.5,
+            "grade": "P-110"
+        }
+    ]
+}

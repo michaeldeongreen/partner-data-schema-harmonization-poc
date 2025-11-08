@@ -4,16 +4,19 @@
       "api": "03-027-11223",
       "name": "BAKKEN HORIZON 3-14H",
       "operator": "CONTINENTAL RESOURCES",
-      "service_company": "HALLIBURTON"
+      "service_company": "HALLIBURTON",
+      "report_type": "200"
     },
     "completion_date": "2024-03-20",
-    "frac_design": {
-      "stages_total": 45,
-      "stage_length": 220,
-      "perforation_clusters": 6,
-      "shots_per_cluster": 12,
-      "proppant_type": "100 MESH SAND",
-      "fluid_system": "SLICKWATER"
+    "manu_tbl_fra": {
+      "manu_fr_d": {
+        "manu_s_t": 45,
+        "manu_s_l": 220,
+        "manu_p_c": 6,
+        "manu_s_p_c": 12,
+        "manu_pp_t": "100 MESH SAND",
+        "manu_f_s": "SLICKWATER"
+      }
     },
     "stage_data": [
       {

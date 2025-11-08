@@ -1,0 +1,102 @@
+{
+    "equipmentIdentifier": {
+        "id": "42-123-45678",
+        "name": "CONTOSO EAGLE FORD 001H"
+    },
+    "operators": [
+        {
+            "companyName": "Contoso Energy LLC",
+            "drillingContractor": "Precision Drilling Corp",
+            "rigId": "RIG-457",
+            "operatorRole": "primary"
+        },
+        {
+            "companyName": "Contoso Operations Inc",
+            "drillingContractor": "Diamond Drilling Services",
+            "rigId": "RIG-892",
+            "operatorRole": "secondary"
+        }
+    ],
+    "drillingReportDate": "2025-11-08",
+    "reportType": "SUMMARY",
+    "wellDepthInfo": {
+        "startingDepthFt": 8450.0,
+        "endDepthFt": 8672.0,
+        "footageCompleted": 222.0,
+        "measuredDepthTotal": 8672.0,
+        "trueVerticalDepthFt": 8201.5
+    },
+    "drillingMetrics": {
+        "bitWeight": 25000,
+        "rpm": 125,
+        "surfacePressure": 2850,
+        "circulationRate": 480,
+        "rotaryTorque": 3200,
+        "penetrationRate": 18.5
+    },
+    "mudSystemData": {
+        "density": 9.8,
+        "funnel_viscosity": 42,
+        "gel_readings": "8/14",
+        "alkalinity": 8.9,
+        "chloride_ppm": 18500,
+        "mud_temp": 142
+    },
+    "bitInformation": {
+        "run_number": 3,
+        "bit_classification": "PDC",
+        "diameter": 8.5,
+        "start_depth": 8450.0,
+        "end_depth": 8672.0,
+        "total_footage": 222.0,
+        "drilling_hours": 12.0
+    },
+    "wellCompletionInfo": {
+        "completion_method": "MULTISTAGE_FRACTURE",
+        "perforationSpecs": {
+            "perf_top": 8200.0,
+            "perf_bottom": 8650.0,
+            "shot_density": 12,
+            "gun_diameter": 4.5
+        },
+        "fracJobData": {
+            "stage_count": 18,
+            "sand_pumped": 2850000,
+            "fluid_pumped": 45000,
+            "sand_type": "20/40 White Sand",
+            "fluid_type": "Slickwater"
+        }
+    },
+    "dailyActivities": [
+        {
+            "start_time": "06:00",
+            "end_time": "14:30",
+            "operation_description": "Drilling ahead with PDC bit",
+            "time_duration": 8.5
+        },
+        {
+            "start_time": "14:30",
+            "end_time": "16:15",
+            "operation_description": "Trip out of hole for bit change",
+            "time_duration": 1.75
+        },
+        {
+            "start_time": "16:15",
+            "end_time": "18:00",
+            "operation_description": "Trip in hole with new bit",
+            "time_duration": 1.75
+        },
+        {
+            "start_time": "18:00",
+            "end_time": "22:30",
+            "operation_description": "Continue drilling lateral section",
+            "time_duration": 4.5
+        },
+        {
+            "start_time": "22:30",
+            "end_time": "06:00",
+            "operation_description": "Circulate and condition mud",
+            "time_duration": 7.5
+        }
+    ]
+}

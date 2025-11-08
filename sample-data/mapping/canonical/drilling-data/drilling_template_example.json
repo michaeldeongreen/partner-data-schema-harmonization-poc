@@ -1,0 +1,75 @@
+{
+    "wellIdentifier": {
+        "apiNumber": "42-123-12345",
+        "wellName": "Example Well 001H"
+    },
+    "operator": {
+        "name": "Example Energy LLC",
+        "contractor": "Example Drilling Corp",
+        "rigNumber": "RIG-001"
+    },
+    "reportDate": "2025-11-08",
+    "reportType": "DRILLING_SUMMARY",
+    "depthProgress": {
+        "previousDepth": 8450.0,
+        "currentDepth": 8672.0,
+        "footageDrilled": 222.0,
+        "totalMeasuredDepth": 8672.0,
+        "totalVerticalDepth": 8201.5
+    },
+    "drillingParameters": {
+        "weightOnBit": 25000.0,
+        "rotarySpeed": 125.0,
+        "pumpPressure": 2850.0,
+        "flowRate": 480.0,
+        "torque": 3200.0,
+        "rateOfPenetration": 18.5
+    },
+    "mudProperties": {
+        "mudWeight": 9.8,
+        "viscosity": 42.0,
+        "gelStrength": "8/14",
+        "ph": 8.9,
+        "chlorides": 18500.0,
+        "temperature": 142.0
+    },
+    "bitRecord": {
+        "bitNumber": 3,
+        "bitType": "PDC",
+        "bitSize": 8.5,
+        "inDepth": 8450.0,
+        "outDepth": 8672.0,
+        "footageDrilled": 222.0,
+        "hoursOnBottom": 12.0
+    },
+    "completionData": {
+        "completionType": "MULTISTAGE_FRACTURE",
+        "perforationData": {
+            "topDepth": 8200.0,
+            "bottomDepth": 8650.0,
+            "shotsPerFoot": 12.0,
+            "gunSize": 4.5
+        },
+        "fracturingData": {
+            "totalStages": 18,
+            "totalProppant": 2850000.0,
+            "totalFluid": 45000.0,
+            "proppantType": "20/40 White Sand",
+            "fluidSystem": "Slickwater"
+        }
+    },
+    "operations": [
+        {
+            "timeStart": "06:00",
+            "timeEnd": "14:30",
+            "activity": "Drilling ahead with PDC bit",
+            "duration": 8.5
+        },
+        {
+            "timeStart": "14:30",
+            "timeEnd": "16:15",
+            "activity": "Trip out of hole for bit change",
+            "duration": 1.75
+        }
+    ]
+}

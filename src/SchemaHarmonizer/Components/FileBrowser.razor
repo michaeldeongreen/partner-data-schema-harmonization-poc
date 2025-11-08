@@ -150,7 +150,8 @@
 
     private void InitializePaths()
     {
-        categoryBasePath = IsStandard ? Path.Combine(basePath, "canonical") : Path.Combine(basePath, "non-canonical");
+        categoryBasePath = IsStandard ? Path.Combine(basePath, "canonical") : Path.Combine(basePath, "annotations",
+        "non-canonical");
         currentPath = categoryBasePath;
     }
 

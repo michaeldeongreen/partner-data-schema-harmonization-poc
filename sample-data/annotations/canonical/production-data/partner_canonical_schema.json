@@ -1,0 +1,29 @@
+{
+    "wellId": "Alpha-1",
+    "productionDate": "2024-11-11",
+    "oilProduction": {
+        "value": 150,
+        "unit": "bbl"
+    },
+    "gasProduction": {
+        "value": 850,
+        "unit": "mcf"
+    },
+    "waterProduction": {
+        "value": 25,
+        "unit": "bbl"
+    },
+    "waterCutPercentage": 15.5,
+    "gasOilRatio": {
+        "value": 567,
+        "unit": "scf/bbl"
+    },
+    "flowingTubingPressure": {
+        "value": 250,
+        "unit": "psi"
+    },
+    "chokeSize": {
+        "value": 12,
+        "unit": "64th"
+    }
+}

@@ -36,7 +36,7 @@ builder.Services.AddRazorComponents()
 builder.Services.AddScoped<IFileService, FileService>();
 builder.Services.AddScoped<IAIService, AIService>();
 builder.Services.AddScoped<ITokenCountService, TokenCountService>();
-builder.Services.AddScoped<IAccuracyValidationService, AccuracyValidationService>();
+builder.Services.AddScoped<IAnnotationService, AnnotationService>();
 
 var app = builder.Build();
 
